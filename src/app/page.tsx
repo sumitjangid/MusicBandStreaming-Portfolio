@@ -40,7 +40,7 @@ export default function Home({videos}: HomeProps) {
   const [accessGranted, setAccessGranted] = useState(false);
   const [streamType, setStreamType] = useState<'youtube' | 'zoom'>('youtube'); // Default to YouTube
   const youtubeVideoId = 'jfKfPfyJRdk';
-  const zoomMeetingId = '123456789'; // Replace with your Zoom Meeting ID
+  const zoomMeetingId = '7109942516'; // Replace with your Zoom Meeting ID
   const zoomPassword = 'zoomPassword'; // Replace with your Zoom Meeting Password (if any)
 
   const handleInputChange = event => {

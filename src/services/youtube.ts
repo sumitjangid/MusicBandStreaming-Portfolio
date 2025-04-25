@@ -27,24 +27,25 @@ export async function getYouTubeVideos(channelId: string): Promise<YouTubeVideo[
 
   return [
     {
-      id: '1', 
-      title: 'Sample Video 1', 
-      thumbnailUrl: 'https://via.placeholder.com/150'
+      id: '5qap5aO4i9A',
+      title: 'Lo-fi hip hop radio - beats to relax/study to',
+      thumbnailUrl: 'https://i.ytimg.com/vi/5qap5aO4i9A/mqdefault.jpg'
     },
     {
-      id: '2', 
-      title: 'Sample Video 2', 
-      thumbnailUrl: 'https://via.placeholder.com/150'
+      id: 'jfKfPfyJRdk',
+      title: 'Relaxing Music &amp; Soft Rain Sounds | Sleep, Study, Meditate',
+      thumbnailUrl: 'https://i.ytimg.com/vi/jfKfPfyJRdk/mqdefault.jpg'
     },
     {
-      id: '3', 
-      title: 'Sample Video 3', 
-      thumbnailUrl: 'https://via.placeholder.com/150'
+      id: 'DWcJFNfaw9c',
+      title: 'White Noise Black Screen | Sleep, Study, Focus | 10 Hours',
+      thumbnailUrl: 'https://i.ytimg.com/vi/DWcJFNfaw9c/mqdefault.jpg'
     },
     {
-      id: '4', 
-      title: 'Sample Video 4', 
-      thumbnailUrl: 'https://via.placeholder.com/150'
+      id: 'Vt90efG8fqQ',
+      title: 'Calm Piano Music 24/7: sleep, study, focus, relax',
+      thumbnailUrl: 'https://i.ytimg.com/vi/Vt90efG8fqQ/mqdefault.jpg'
     }
   ];
 }
+
