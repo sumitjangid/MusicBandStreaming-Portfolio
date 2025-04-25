@@ -19,67 +19,67 @@ const bandInfo = {
     {
       id: '1',
       name: 'Alex R.',
-      avatarUrl: 'https://i.scdn.co/image/ab6761610000e5eb570793d2c16f52b468747977',
+      avatarUrl: 'https://images.pexels.com/photos/1673350/pexels-photo-1673350.jpeg?auto=compress&cs=tinysrgb&w=400',
       bio: 'Lead vocalist and guitarist, Alex brings a raw energy to the stage that captivates audiences.',
     },
     {
       id: '2',
       name: 'Jordan M.',
-      avatarUrl: 'https://i.scdn.co/image/ab6761610000e5eb570793d2c16f52b468747977',
+      avatarUrl: 'https://images.pexels.com/photos/96424/pexels-photo-96424.jpeg?auto=compress&cs=tinysrgb&w=400',
       bio: 'Bass player Jordan lays down the groove with infectious rhythms and a deep pocket.',
     },
     {
       id: '3',
       name: 'Casey L.',
-      avatarUrl: 'https://i.scdn.co/image/ab6761610000e5eb570793d2c16f52b468747977',
+      avatarUrl: 'https://images.pexels.com/photos/853151/pexels-photo-853151.jpeg?auto=compress&cs=tinysrgb&w=400',
       bio: 'Drummer Casey keeps the beat alive with powerful drumming and intricate patterns.',
     },
     {
       id: '4',
       name: 'Morgan S.',
-      avatarUrl: 'https://i.scdn.co/image/ab6761610000e5eb570793d2c16f52b468747977',
+      avatarUrl: 'https://images.pexels.com/photos/1034859/pexels-photo-1034859.jpeg?auto=compress&cs=tinysrgb&w=400',
       bio: 'Keyboardist Morgan adds lush textures and soaring melodies to the band sound.',
     },
     {
       id: '5',
       name: 'Taylor B.',
-      avatarUrl: 'https://i.scdn.co/image/ab6761610000e5eb570793d2c16f52b468747977',
+      avatarUrl: 'https://images.pexels.com/photos/2679544/pexels-photo-2679544.jpeg?auto=compress&cs=tinysrgb&w=400',
       bio: 'Saxophonist Taylor brings soulful vibes and improvisational flair to every performance.',
     },
     {
       id: '6',
       name: 'Jamie D.',
-      avatarUrl: 'https://i.scdn.co/image/ab6761610000e5eb570793d2c16f52b468747977',
+      avatarUrl: 'https://images.pexels.com/photos/1036935/pexels-photo-1036935.jpeg?auto=compress&cs=tinysrgb&w=400',
       bio: 'Trumpet player Jamie adds a brassy punch to the band\'s vibrant sound.',
     },
     {
       id: '7',
       name: 'Chris P.',
-      avatarUrl: 'https://i.scdn.co/image/ab6761610000e5eb570793d2c16f52b468747977',
+      avatarUrl: 'https://images.pexels.com/photos/3768031/pexels-photo-3768031.jpeg?auto=compress&cs=tinysrgb&w=400',
       bio: 'Trombone extraordinaire Chris blends smooth tones with rhythmic precision.',
     },
     {
       id: '8',
       name: 'Blake H.',
-      avatarUrl: 'https://i.scdn.co/image/ab6761610000e5eb570793d2c16f52b468747977',
+      avatarUrl: 'https://images.pexels.com/photos/1194727/pexels-photo-1194727.jpeg?auto=compress&cs=tinysrgb&w=400',
       bio: 'Energetic dancer Blake electrifies the stage with captivating moves.',
     },
     {
       id: '9',
       name: 'River L.',
-      avatarUrl: 'https://i.scdn.co/image/ab6761610000e5eb570793d2c16f52b468747977',
+      avatarUrl: 'https://images.pexels.com/photos/3825566/pexels-photo-3825566.jpeg?auto=compress&cs=tinysrgb&w=400',
       bio: 'Acoustic guitarist River enchants with soulful melodies and intricate fingerstyle.',
     },
     {
       id: '10',
       name: 'Skyler W.',
-      avatarUrl: 'https://i.scdn.co/image/ab6761610000e5eb570793d2c16f52b468747977',
+      avatarUrl: 'https://images.pexels.com/photos/3767983/pexels-photo-3767983.jpeg?auto=compress&cs=tinysrgb&w=400',
       bio: 'Backup Vocalist Skyler enhances harmonies with smooth blending.',
     },
     {
       id: '11',
       name: 'Jesse M.',
-      avatarUrl: 'https://i.scdn.co/image/ab6761610000e5eb570793d2c16f52b468747977',
+      avatarUrl: 'https://images.pexels.com/photos/2528118/pexels-photo-2528118.jpeg?auto=compress&cs=tinysrgb&w=400',
       bio: 'Multi-instrumentalist Jesse adds unique textures with violin and mandolin.',
     },
   ],
@@ -337,3 +337,4 @@ export default function Home({videos}: HomeProps) {
     </div>
   );
 }
+
