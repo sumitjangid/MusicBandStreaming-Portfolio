@@ -27,24 +27,24 @@ export async function getYouTubeVideos(channelId: string): Promise<YouTubeVideo[
 
   return [
     {
-      id: '5qap5aO4i9A',
-      title: 'Lo-fi hip hop radio - beats to relax/study to',
-      thumbnailUrl: 'https://i.ytimg.com/vi/5qap5aO4i9A/mqdefault.jpg'
+      id: 'dQw4w9WgXcQ',
+      title: 'Rick Astley - Never Gonna Give You Up (Official Music Video)',
+      thumbnailUrl: 'https://i.ytimg.com/vi/dQw4w9WgXcQ/mqdefault.jpg'
     },
     {
-      id: 'jfKfPfyJRdk',
-      title: 'Relaxing Music &amp; Soft Rain Sounds | Sleep, Study, Meditate',
-      thumbnailUrl: 'https://i.ytimg.com/vi/jfKfPfyJRdk/mqdefault.jpg'
+      id: 'jNQXAC9IVRw',
+      title: 'The Benny Hill Show - Yakety Sax',
+      thumbnailUrl: 'https://i.ytimg.com/vi/jNQXAC9IVRw/mqdefault.jpg'
     },
     {
-      id: 'DWcJFNfaw9c',
-      title: 'White Noise Black Screen | Sleep, Study, Focus | 10 Hours',
-      thumbnailUrl: 'https://i.ytimg.com/vi/DWcJFNfaw9c/mqdefault.jpg'
+      id: 'nfWlot6h_JM',
+      title: 'Nyan Cat [original]',
+      thumbnailUrl: 'https://i.ytimg.com/vi/nfWlot6h_JM/mqdefault.jpg'
     },
     {
-      id: 'Vt90efG8fqQ',
-      title: 'Calm Piano Music 24/7: sleep, study, focus, relax',
-      thumbnailUrl: 'https://i.ytimg.com/vi/Vt90efG8fqQ/mqdefault.jpg'
+      id: 'QH2-TGUlwzg',
+      title: 'Megalovania',
+      thumbnailUrl: 'https://i.ytimg.com/vi/QH2-TGUlwzg/mqdefault.jpg'
     }
   ];
 }
