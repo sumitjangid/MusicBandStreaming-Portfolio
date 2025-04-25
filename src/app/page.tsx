@@ -49,14 +49,14 @@ const bandInfo = {
 const upcomingEvents = [
   {
     id: 'event1',
-    date: '2024-08-15',
+    date: '2024-08-15T00:00:00.000Z',
     location: 'The Roxy, Los Angeles',
     thumbnailUrl: 'https://picsum.photos/id/300/300/200',
     description: 'Get ready for a night of electrifying music at The Roxy!',
   },
   {
     id: 'event2',
-    date: '2024-09-20',
+    date: '2024-09-20T00:00:00.000Z',
     location: 'The Fillmore, San Francisco',
     thumbnailUrl: 'https://picsum.photos/id/301/300/200',
     description: 'Join us at The Fillmore for an unforgettable performance.',
@@ -69,6 +69,16 @@ interface HomeProps {
     title: string;
     thumbnailUrl: string;
   }[];
+}
+
+function formatDate(dateString: string): string {
+  const date = new Date(dateString);
+  const options: Intl.DateTimeFormatOptions = {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  };
+  return date.toLocaleDateString('en-US', options);
 }
 
 export default function Home({videos}: HomeProps) {
@@ -186,11 +196,7 @@ export default function Home({videos}: HomeProps) {
               />
               <CardContent>
                 <CardTitle className="text-xl font-semibold">
-                  {new Date(event.date).toLocaleDateString('en-US', {
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric',
-                  })}
+                  {formatDate(event.date)}
                 </CardTitle>
                 <CardDescription>{event.location}</CardDescription>
                 <p className="text-sm text-muted-foreground">
