@@ -16,9 +16,24 @@ const bandInfo = {
   name: 'Electric Pulse',
   description: 'A high-energy band bringing you the best of funk, rock, and soul.',
   members: [
-    {id: '1', name: 'Alex R.', avatarUrl: 'https://picsum.photos/id/237/100/100'},
-    {id: '2', name: 'Jordan M.', avatarUrl: 'https://picsum.photos/id/238/100/100'},
-    {id: '3', name: 'Casey L.', avatarUrl: 'https://picsum.photos/id/239/100/100'},
+    {
+      id: '1',
+      name: 'Alex R.',
+      avatarUrl: 'https://picsum.photos/id/237/100/100',
+      bio: 'Lead vocalist and guitarist, Alex brings a raw energy to the stage that captivates audiences.',
+    },
+    {
+      id: '2',
+      name: 'Jordan M.',
+      avatarUrl: 'https://picsum.photos/id/238/100/100',
+      bio: 'Bass player Jordan lays down the groove with infectious rhythms and a deep pocket.',
+    },
+    {
+      id: '3',
+      name: 'Casey L.',
+      avatarUrl: 'https://picsum.photos/id/239/100/100',
+      bio: 'Drummer Casey keeps the beat alive with powerful drumming and intricate patterns.',
+    },
   ],
   socialLinks: {
     youtube: 'https://youtube.com',
@@ -73,12 +88,21 @@ export default function Home({videos}: HomeProps) {
           <h3 className="text-lg font-semibold mb-2">Band Members</h3>
           <div className="flex items-center gap-4">
             {bandInfo.members.map(member => (
-              <div key={member.id} className="flex flex-col items-center">
-                <Avatar>
-                  <AvatarImage src={member.avatarUrl} alt={member.name} />
-                  <AvatarFallback>{member.name.substring(0, 2)}</AvatarFallback>
-                </Avatar>
-                <span className="text-sm mt-1">{member.name}</span>
+              <div
+                key={member.id}
+                className="w-32 h-48 relative overflow-hidden rounded-md shadow-md hover:shadow-lg transition-shadow duration-300 group"
+              >
+                <img
+                  src={member.avatarUrl}
+                  alt={member.name}
+                  className="w-full h-full object-cover absolute inset-0 transition-transform duration-300 group-hover:scale-110"
+                />
+                <div className="absolute bottom-0 left-0 w-full bg-black bg-opacity-70 text-white p-2 text-center">
+                  <span className="text-sm font-semibold">{member.name}</span>
+                </div>
+                <div className="absolute inset-0 bg-black bg-opacity-80 flex flex-col justify-center items-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <p className="text-sm px-4 text-center">{member.bio}</p>
+                </div>
               </div>
             ))}
           </div>
