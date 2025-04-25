@@ -29,13 +29,16 @@ const Nav = () => {
         </div>
         <nav className="hidden md:flex items-center justify-end flex-grow space-x-6">
           <a href="#band-info" className="text-sm hover:underline">
-            Band Info
+            About Us
           </a>
           <a href="#video-gallery" className="text-sm hover:underline">
-            Video Gallery
+            Music
           </a>
           <a href="#live-stream" className="text-sm hover:underline">
-            Live Stream
+            Live
+          </a>
+          <a href="#events" className="text-sm hover:underline">
+            Events
           </a>
         </nav>
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -54,13 +57,16 @@ const Nav = () => {
             </SheetHeader>
             <div className="grid gap-4 py-4">
               <Button variant="outline" asChild>
-                <a href="#band-info">Band Info</a>
+                <a href="#band-info">About Us</a>
               </Button>
               <Button variant="outline" asChild>
-                <a href="#video-gallery">Video Gallery</a>
+                <a href="#video-gallery">Music</a>
               </Button>
               <Button variant="outline" asChild>
-                <a href="#live-stream">Live Stream</a>
+                <a href="#live-stream">Live</a>
+              </Button>
+              <Button variant="outline" asChild>
+                <a href="#events">Events</a>
               </Button>
             </div>
           </SheetContent>
