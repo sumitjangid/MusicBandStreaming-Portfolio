@@ -10,7 +10,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import {Avatar, AvatarFallback, AvatarImage} from '@/components/ui/avatar';
+import {PlayIcon} from 'lucide-react';
 
 const bandInfo = {
   name: 'Electric Pulse',
@@ -69,6 +69,18 @@ const bandInfo = {
       name: 'River L.',
       avatarUrl: 'https://i.scdn.co/image/ab6761610000e5eb570793d2c16f52b468747977',
       bio: 'Acoustic guitarist River enchants with soulful melodies and intricate fingerstyle.',
+    },
+    {
+      id: '10',
+      name: 'Skyler W.',
+      avatarUrl: 'https://i.scdn.co/image/ab6761610000e5eb570793d2c16f52b468747977',
+      bio: 'Backup Vocalist Skyler enhances harmonies with smooth blending.',
+    },
+    {
+      id: '11',
+      name: 'Jesse M.',
+      avatarUrl: 'https://i.scdn.co/image/ab6761610000e5eb570793d2c16f52b468747977',
+      bio: 'Multi-instrumentalist Jesse adds unique textures with violin and mandolin.',
     },
   ],
   socialLinks: {
@@ -156,81 +168,83 @@ export default function Home({videos}: HomeProps) {
   return (
     <div className="container mx-auto px-4 py-8">
       {/* Band Information */}
-      <Card className="mb-8">
-        <CardHeader>
-          <CardTitle className="text-2xl font-bold">{bandInfo.name}</CardTitle>
-          <CardDescription>{bandInfo.description}</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <h3 className="text-lg font-semibold mb-2">Band Members</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {bandInfo.members.map(member => (
-              <div
-                key={member.id}
-                className="relative w-full h-64 overflow-hidden rounded-md shadow-md hover:shadow-lg transition-shadow duration-300 group"
-              >
-                <img
-                  src={member.avatarUrl}
-                  alt={member.name}
-                  className="w-full h-full object-cover absolute inset-0 transition-transform duration-300 group-hover:scale-110"
-                />
-                <div className="absolute bottom-0 left-0 w-full bg-black bg-opacity-70 text-white p-2 text-center">
-                  <span className="text-sm font-semibold">{member.name}</span>
+      <section id="band-info" className="mb-8">
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle className="text-2xl font-bold">{bandInfo.name}</CardTitle>
+            <CardDescription>{bandInfo.description}</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <h3 className="text-lg font-semibold mb-2">Band Members</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              {bandInfo.members.map(member => (
+                <div
+                  key={member.id}
+                  className="relative w-full h-64 overflow-hidden rounded-md shadow-md hover:shadow-lg transition-shadow duration-300 group"
+                >
+                  <img
+                    src={member.avatarUrl}
+                    alt={member.name}
+                    className="w-full h-full object-cover absolute inset-0 transition-transform duration-300 group-hover:scale-110"
+                  />
+                  <div className="absolute bottom-0 left-0 w-full bg-black bg-opacity-70 text-white p-2 text-center">
+                    <span className="text-sm font-semibold">{member.name}</span>
+                  </div>
+                  <div className="absolute inset-0 bg-black bg-opacity-80 flex flex-col justify-center items-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <p className="text-sm px-4 text-center">{member.bio}</p>
+                  </div>
                 </div>
-                <div className="absolute inset-0 bg-black bg-opacity-80 flex flex-col justify-center items-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <p className="text-sm px-4 text-center">{member.bio}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="mt-4">
-            <h3 className="text-lg font-semibold mb-2">Connect With Us</h3>
-            <div className="flex gap-4">
-              <Button asChild variant="link">
-                <a
-                  href={bandInfo.socialLinks.youtube}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  YouTube
-                </a>
-              </Button>
-              <Button asChild variant="link">
-                <a
-                  href={bandInfo.socialLinks.instagram}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Instagram
-                </a>
-              </Button>
-              <Button asChild variant="link">
-                <a
-                  href={bandInfo.socialLinks.facebook}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Facebook
-                </a>
-              </Button>
+              ))}
             </div>
-          </div>
-          <div className="mt-4">
-            <h3 className="text-lg font-semibold mb-2">Contact Us</h3>
-            <p>Email: {bandInfo.contact.email}</p>
-            <p>Phone: {bandInfo.contact.phone}</p>
-          </div>
-        </CardContent>
-      </Card>
+            <div className="mt-4">
+              <h3 className="text-lg font-semibold mb-2">Connect With Us</h3>
+              <div className="flex gap-4">
+                <Button asChild variant="link">
+                  <a
+                    href={bandInfo.socialLinks.youtube}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    YouTube
+                  </a>
+                </Button>
+                <Button asChild variant="link">
+                  <a
+                    href={bandInfo.socialLinks.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Instagram
+                  </a>
+                </Button>
+                <Button asChild variant="link">
+                  <a
+                    href={bandInfo.socialLinks.facebook}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Facebook
+                  </a>
+                </Button>
+              </div>
+            </div>
+            <div className="mt-4">
+              <h3 className="text-lg font-semibold mb-2">Contact Us</h3>
+              <p>Email: {bandInfo.contact.email}</p>
+              <p>Phone: {bandInfo.contact.phone}</p>
+            </div>
+          </CardContent>
+        </Card>
+      </section>
 
       {/* Video Gallery */}
-      <section className="mb-8">
-        <h2 className="text-2xl font-bold mb-4">Video Gallery</h2>
+      <section id="video-gallery" className="mb-8">
+        <h2 className="text-2xl font-bold mb-4">Music Videos</h2>
         <YoutubeGallery videos={videos} />
       </section>
 
       {/* Upcoming Events */}
-      <section className="mb-8">
+      <section id="events" className="mb-8">
         <h2 className="text-2xl font-bold mb-4">Upcoming Events</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {upcomingEvents.map(event => (
@@ -255,7 +269,7 @@ export default function Home({videos}: HomeProps) {
       </section>
 
       {/* Livestream Section */}
-      <section>
+      <section id="live-stream">
         <h2 className="text-2xl font-bold mb-4">Live Stream</h2>
         {!accessGranted ? (
           <>

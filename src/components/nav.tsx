@@ -32,10 +32,10 @@ const Nav = () => {
             About Us
           </a>
           <a href="#video-gallery" className="text-sm hover:underline">
-            Music
+            Music Videos
           </a>
           <a href="#live-stream" className="text-sm hover:underline">
-            Live
+            Live Stream
           </a>
           <a href="#events" className="text-sm hover:underline">
             Events
@@ -60,10 +60,10 @@ const Nav = () => {
                 <a href="#band-info">About Us</a>
               </Button>
               <Button variant="outline" asChild>
-                <a href="#video-gallery">Music</a>
+                <a href="#video-gallery">Music Videos</a>
               </Button>
               <Button variant="outline" asChild>
-                <a href="#live-stream">Live</a>
+                <a href="#live-stream">Live Stream</a>
               </Button>
               <Button variant="outline" asChild>
                 <a href="#events">Events</a>
