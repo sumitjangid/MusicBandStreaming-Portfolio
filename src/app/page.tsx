@@ -19,48 +19,60 @@ const bandInfo = {
     {
       id: '1',
       name: 'Alex R.',
-      avatarUrl: 'https://picsum.photos/id/237/100/100',
+      avatarUrl: 'https://i.scdn.co/image/ab6761610000e5eb570793d2c16f52b468747977',
       bio: 'Lead vocalist and guitarist, Alex brings a raw energy to the stage that captivates audiences.',
     },
     {
       id: '2',
       name: 'Jordan M.',
-      avatarUrl: 'https://picsum.photos/id/238/100/100',
+      avatarUrl: 'https://i.scdn.co/image/ab6761610000e5eb570793d2c16f52b468747977',
       bio: 'Bass player Jordan lays down the groove with infectious rhythms and a deep pocket.',
     },
     {
       id: '3',
       name: 'Casey L.',
-      avatarUrl: 'https://picsum.photos/id/239/100/100',
+      avatarUrl: 'https://i.scdn.co/image/ab6761610000e5eb570793d2c16f52b468747977',
       bio: 'Drummer Casey keeps the beat alive with powerful drumming and intricate patterns.',
     },
     {
       id: '4',
       name: 'Morgan S.',
-      avatarUrl: 'https://picsum.photos/id/240/100/100',
+      avatarUrl: 'https://i.scdn.co/image/ab6761610000e5eb570793d2c16f52b468747977',
       bio: 'Keyboardist Morgan adds lush textures and soaring melodies to the band sound.',
     },
     {
       id: '5',
       name: 'Taylor B.',
-      avatarUrl: 'https://picsum.photos/id/241/100/100',
+      avatarUrl: 'https://i.scdn.co/image/ab6761610000e5eb570793d2c16f52b468747977',
       bio: 'Saxophonist Taylor brings soulful vibes and improvisational flair to every performance.',
     },
     {
       id: '6',
       name: 'Jamie D.',
-      avatarUrl: 'https://picsum.photos/id/242/100/100',
+      avatarUrl: 'https://i.scdn.co/image/ab6761610000e5eb570793d2c16f52b468747977',
       bio: 'Trumpet player Jamie adds a brassy punch to the band\'s vibrant sound.',
     },
     {
       id: '7',
       name: 'Chris P.',
-      avatarUrl: 'https://picsum.photos/id/243/100/100',
+      avatarUrl: 'https://i.scdn.co/image/ab6761610000e5eb570793d2c16f52b468747977',
       bio: 'Trombone extraordinaire Chris blends smooth tones with rhythmic precision.',
+    },
+    {
+      id: '8',
+      name: 'Blake H.',
+      avatarUrl: 'https://i.scdn.co/image/ab6761610000e5eb570793d2c16f52b468747977',
+      bio: 'Energetic dancer Blake electrifies the stage with captivating moves.',
+    },
+    {
+      id: '9',
+      name: 'River L.',
+      avatarUrl: 'https://i.scdn.co/image/ab6761610000e5eb570793d2c16f52b468747977',
+      bio: 'Acoustic guitarist River enchants with soulful melodies and intricate fingerstyle.',
     },
   ],
   socialLinks: {
-    youtube: 'https://youtube.com',
+    youtube: 'https://youtube.com/FooFighters',
     instagram: 'https://instagram.com',
     facebook: 'https://facebook.com',
   },
@@ -75,14 +87,14 @@ const upcomingEvents = [
     id: 'event1',
     date: '2024-08-14T00:00:00.000Z',
     location: 'The Roxy, Los Angeles',
-    thumbnailUrl: 'https://picsum.photos/id/300/300/200',
+    thumbnailUrl: 'https://i.ytimg.com/vi/pAgnJDJN4VA/mqdefault.jpg',
     description: 'Get ready for a night of electrifying music at The Roxy!',
   },
   {
     id: 'event2',
     date: '2024-09-20T00:00:00.000Z',
     location: 'The Fillmore, San Francisco',
-    thumbnailUrl: 'https://picsum.photos/id/301/300/200',
+    thumbnailUrl: 'https://i.ytimg.com/vi/45JVP4V9Eak/mqdefault.jpg',
     description: 'Join us at The Fillmore for an unforgettable performance.',
   },
 ];
@@ -151,11 +163,11 @@ export default function Home({videos}: HomeProps) {
         </CardHeader>
         <CardContent>
           <h3 className="text-lg font-semibold mb-2">Band Members</h3>
-          <div className="flex items-center gap-4 overflow-x-auto py-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {bandInfo.members.map(member => (
               <div
                 key={member.id}
-                className="relative flex-shrink-0 w-32 md:w-40 h-48 md:h-56 overflow-hidden rounded-md shadow-md hover:shadow-lg transition-shadow duration-300 group"
+                className="relative w-full h-64 overflow-hidden rounded-md shadow-md hover:shadow-lg transition-shadow duration-300 group"
               >
                 <img
                   src={member.avatarUrl}
