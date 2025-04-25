@@ -27,7 +27,7 @@ const Nav = () => {
             BandStream
           </a>
         </div>
-        <nav className="hidden md:flex items-center space-x-6">
+        <nav className="hidden md:flex items-center justify-end flex-grow space-x-6">
           <a href="#band-info" className="text-sm hover:underline">
             Band Info
           </a>
