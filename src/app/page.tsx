@@ -40,6 +40,10 @@ const bandInfo = {
     instagram: 'https://instagram.com',
     facebook: 'https://facebook.com',
   },
+  contact: {
+    email: 'info@electricpulse.com',
+    phone: '555-123-4567',
+  },
 };
 
 interface HomeProps {
@@ -137,6 +141,11 @@ export default function Home({videos}: HomeProps) {
                 </a>
               </Button>
             </div>
+          </div>
+          <div className="mt-4">
+            <h3 className="text-lg font-semibold mb-2">Contact Us</h3>
+            <p>Email: {bandInfo.contact.email}</p>
+            <p>Phone: {bandInfo.contact.phone}</p>
           </div>
         </CardContent>
       </Card>
