@@ -46,6 +46,18 @@ const bandInfo = {
       avatarUrl: 'https://picsum.photos/id/241/100/100',
       bio: 'Saxophonist Taylor brings soulful vibes and improvisational flair to every performance.',
     },
+    {
+      id: '6',
+      name: 'Jamie D.',
+      avatarUrl: 'https://picsum.photos/id/242/100/100',
+      bio: 'Trumpet player Jamie adds a brassy punch to the band\'s vibrant sound.',
+    },
+    {
+      id: '7',
+      name: 'Chris P.',
+      avatarUrl: 'https://picsum.photos/id/243/100/100',
+      bio: 'Trombone extraordinaire Chris blends smooth tones with rhythmic precision.',
+    },
   ],
   socialLinks: {
     youtube: 'https://youtube.com',
@@ -139,11 +151,11 @@ export default function Home({videos}: HomeProps) {
         </CardHeader>
         <CardContent>
           <h3 className="text-lg font-semibold mb-2">Band Members</h3>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 overflow-x-auto py-2">
             {bandInfo.members.map(member => (
               <div
                 key={member.id}
-                className="w-32 h-48 relative overflow-hidden rounded-md shadow-md hover:shadow-lg transition-shadow duration-300 group"
+                className="relative flex-shrink-0 w-32 md:w-40 h-48 md:h-56 overflow-hidden rounded-md shadow-md hover:shadow-lg transition-shadow duration-300 group"
               >
                 <img
                   src={member.avatarUrl}
