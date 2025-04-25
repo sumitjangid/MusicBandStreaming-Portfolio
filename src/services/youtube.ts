@@ -27,26 +27,24 @@ export async function getYouTubeVideos(channelId: string): Promise<YouTubeVideo[
 
   return [
     {
-      id: 'dQw4w9WgXcQ',
-      title: 'Rick Astley - Never Gonna Give You Up (Official Music Video)',
-      thumbnailUrl: 'https://i.ytimg.com/vi/dQw4w9WgXcQ/mqdefault.jpg'
+      id: 'Rd9VMEzYWoI',
+      title: 'Foo Fighters - The Pretender',
+      thumbnailUrl: 'https://i.ytimg.com/vi/Rd9VMEzYWoI/mqdefault.jpg'
     },
     {
-      id: 'jNQXAC9IVRw',
-      title: 'The Benny Hill Show - Yakety Sax',
-      thumbnailUrl: 'https://i.ytimg.com/vi/jNQXAC9IVRw/mqdefault.jpg'
+      id: 'pAgnJDJN4VA',
+      title: 'Red Hot Chili Peppers - Can\'t Stop',
+      thumbnailUrl: 'https://i.ytimg.com/vi/pAgnJDJN4VA/mqdefault.jpg'
     },
     {
-      id: 'nfWlot6h_JM',
-      title: 'Nyan Cat [original]',
-      thumbnailUrl: 'https://i.ytimg.com/vi/nfWlot6h_JM/mqdefault.jpg'
+      id: 'qZUTkK2QZms',
+      title: 'Audioslave - Like a Stone',
+      thumbnailUrl: 'https://i.ytimg.com/vi/qZUTkK2QZms/mqdefault.jpg'
     },
     {
-      id: 'QH2-TGUlwzg',
-      title: 'Megalovania',
-      thumbnailUrl: 'https://i.ytimg.com/vi/QH2-TGUlwzg/mqdefault.jpg'
+      id: 'Ys7-6_t7OEQ',
+      title: 'Nirvana - Smells Like Teen Spirit',
+      thumbnailUrl: 'https://i.ytimg.com/vi/Ys7-6_t7OEQ/mqdefault.jpg'
     }
   ];
 }
-
-
