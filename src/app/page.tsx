@@ -38,7 +38,10 @@ interface HomeProps {
 export default function Home({videos}: HomeProps) {
   const [password, setPassword] = useState('');
   const [accessGranted, setAccessGranted] = useState(false);
+  const [streamType, setStreamType] = useState<'youtube' | 'zoom'>('youtube'); // Default to YouTube
   const youtubeVideoId = 'jfKfPfyJRdk';
+  const zoomMeetingId = '123456789'; // Replace with your Zoom Meeting ID
+  const zoomPassword = 'zoomPassword'; // Replace with your Zoom Meeting Password (if any)
 
   const handleInputChange = event => {
     setPassword(event.target.value);
@@ -52,6 +55,10 @@ export default function Home({videos}: HomeProps) {
       alert('Incorrect password');
       setAccessGranted(false);
     }
+  };
+
+  const handleStreamTypeChange = (type: 'youtube' | 'zoom') => {
+    setStreamType(type);
   };
 
   return (
@@ -137,14 +144,49 @@ export default function Home({videos}: HomeProps) {
             </form>
           </>
         ) : (
-          <div className="aspect-w-16 aspect-h-9">
-            <iframe
-              src={`https://www.youtube.com/embed/${youtubeVideoId}`}
-              title="YouTube Live Stream"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-          </div>
+          <>
+            <div className="mb-4">
+              <Button
+                variant={streamType === 'youtube' ? 'default' : 'secondary'}
+                onClick={() => handleStreamTypeChange('youtube')}
+              >
+                YouTube Stream
+              </Button>
+              <Button
+                variant={streamType === 'zoom' ? 'default' : 'secondary'}
+                onClick={() => handleStreamTypeChange('zoom')}
+                className="ml-2"
+              >
+                Zoom Meeting
+              </Button>
+            </div>
+
+            {streamType === 'youtube' ? (
+              <div className="aspect-w-16 aspect-h-9">
+                <iframe
+                  src={`https://www.youtube.com/embed/${youtubeVideoId}`}
+                  title="YouTube Live Stream"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+            ) : (
+              <div className="aspect-w-16 aspect-h-9">
+                <iframe
+                  src={`https://zoom.us/wc/${zoomMeetingId}/join?prefer=1&un=${btoa(
+                    'BandStream User'
+                  )}`}
+                  title="Zoom Meeting"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+                {/* <p>
+                  Join our Zoom meeting! Meeting ID: {zoomMeetingId}, Password:{' '}
+                  {zoomPassword}
+                </p> */}
+              </div>
+            )}
+          </>
         )}
       </section>
     </div>
