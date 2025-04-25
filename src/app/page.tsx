@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from 'react';
 import { YoutubeGallery } from "@/components/youtube-gallery";
 import { getYouTubeVideos } from "@/services/youtube";
 import { Button } from "@/components/ui/button";
@@ -21,6 +24,24 @@ const bandInfo = {
 };
 
 export default async function Home() {
+  const [password, setPassword] = useState('');
+  const [accessGranted, setAccessGranted] = useState(false);
+  const youtubeVideoId = 'jfKfPfyJRdk';
+
+  const handleInputChange = (event) => {
+    setPassword(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (password === 'correctPassword') {
+      setAccessGranted(true);
+    } else {
+      alert('Incorrect password');
+      setAccessGranted(false);
+    }
+  };
+
     const videos = await getYouTubeVideos("channelId");
 
   return (
@@ -76,18 +97,34 @@ export default async function Home() {
       {/* Livestream Section */}
       <section>
         <h2 className="text-2xl font-bold mb-4">Live Stream</h2>
-        <p>
-          Join us for our next live performance! Enter the password to access the stream.
-        </p>
-        <form className="flex gap-2">
-          <input
-            type="password"
-            placeholder="Password"
-            className="border rounded px-2 py-1 text-black"
-          />
-          <Button type="submit">Access Stream</Button>
-        </form>
+        {!accessGranted ? (
+          <>
+            <p>
+              Join us for our next live performance! Enter the password to access the stream.
+            </p>
+            <form className="flex gap-2" onSubmit={handleSubmit}>
+              <input
+                type="password"
+                placeholder="Password"
+                className="border rounded px-2 py-1 text-black"
+                value={password}
+                onChange={handleInputChange}
+              />
+              <Button type="submit">Access Stream</Button>
+            </form>
+          </>
+        ) : (
+          <div className="aspect-w-16 aspect-h-9">
+            <iframe
+              src={`https://www.youtube.com/embed/${youtubeVideoId}`}
+              title="YouTube Live Stream"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+        )}
       </section>
     </div>
   );
 }
+

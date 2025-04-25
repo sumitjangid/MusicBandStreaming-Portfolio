@@ -35,6 +35,16 @@ export async function getYouTubeVideos(channelId: string): Promise<YouTubeVideo[
       id: '2', 
       title: 'Sample Video 2', 
       thumbnailUrl: 'https://via.placeholder.com/150'
+    },
+    {
+      id: '3', 
+      title: 'Sample Video 3', 
+      thumbnailUrl: 'https://via.placeholder.com/150'
+    },
+    {
+      id: '4', 
+      title: 'Sample Video 4', 
+      thumbnailUrl: 'https://via.placeholder.com/150'
     }
   ];
 }
