@@ -1,6 +1,6 @@
 'use client';
 
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import {YoutubeGallery} from '@/components/youtube-gallery';
 import {Button} from '@/components/ui/button';
 import {
@@ -49,7 +49,7 @@ const bandInfo = {
 const upcomingEvents = [
   {
     id: 'event1',
-    date: '2024-08-15T00:00:00.000Z',
+    date: '2024-08-14T00:00:00.000Z',
     location: 'The Roxy, Los Angeles',
     thumbnailUrl: 'https://picsum.photos/id/300/300/200',
     description: 'Get ready for a night of electrifying music at The Roxy!',
@@ -81,11 +81,21 @@ function formatDate(dateString: string): string {
   return date.toLocaleDateString('en-US', options);
 }
 
+const ClientFormattedDate = ({dateString}: {dateString: string}) => {
+  const [formattedDate, setFormattedDate] = useState('');
+
+  useEffect(() => {
+    setFormattedDate(formatDate(dateString));
+  }, [dateString]);
+
+  return <>{formattedDate}</>;
+}
+
 export default function Home({videos}: HomeProps) {
   const [password, setPassword] = useState('');
   const [accessGranted, setAccessGranted] = useState(false);
   const [streamType, setStreamType] = useState<'youtube' | 'zoom'>('youtube'); // Default to YouTube
-  const youtubeVideoId = 'jfKfPfyJRdk';
+  const youtubeVideoId = '45JVP4V9Eak';
   const zoomMeetingId = '7109942516'; // Replace with your Zoom Meeting ID
   const zoomPassword = 'zoomPassword'; // Replace with your Zoom Meeting Password (if any)
 
@@ -196,7 +206,7 @@ export default function Home({videos}: HomeProps) {
               />
               <CardContent>
                 <CardTitle className="text-xl font-semibold">
-                  {formatDate(event.date)}
+                  <ClientFormattedDate dateString={event.date} />
                 </CardTitle>
                 <CardDescription>{event.location}</CardDescription>
                 <p className="text-sm text-muted-foreground">
