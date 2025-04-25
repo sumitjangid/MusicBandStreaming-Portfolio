@@ -1,38 +1,50 @@
-"use client";
+'use client';
 
-import { useState } from 'react';
-import { YoutubeGallery } from "@/components/youtube-gallery";
-import { getYouTubeVideos } from "@/services/youtube";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Verified } from "lucide-react";
+import {useState} from 'react';
+import {YoutubeGallery} from '@/components/youtube-gallery';
+import {Button} from '@/components/ui/button';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
+import {Avatar, AvatarFallback, AvatarImage} from '@/components/ui/avatar';
 
 const bandInfo = {
-  name: "Electric Pulse",
-  description: "A high-energy band bringing you the best of funk, rock, and soul.",
+  name: 'Electric Pulse',
+  description: 'A high-energy band bringing you the best of funk, rock, and soul.',
   members: [
-    { id: "1", name: "Alex R.", avatarUrl: "https://picsum.photos/id/237/100/100" },
-    { id: "2", name: "Jordan M.", avatarUrl: "https://picsum.photos/id/238/100/100" },
-    { id: "3", name: "Casey L.", avatarUrl: "https://picsum.photos/id/239/100/100" },
+    {id: '1', name: 'Alex R.', avatarUrl: 'https://picsum.photos/id/237/100/100'},
+    {id: '2', name: 'Jordan M.', avatarUrl: 'https://picsum.photos/id/238/100/100'},
+    {id: '3', name: 'Casey L.', avatarUrl: 'https://picsum.photos/id/239/100/100'},
   ],
   socialLinks: {
-    youtube: "https://youtube.com",
-    instagram: "https://instagram.com",
-    facebook: "https://facebook.com",
+    youtube: 'https://youtube.com',
+    instagram: 'https://instagram.com',
+    facebook: 'https://facebook.com',
   },
 };
 
-export default async function Home() {
+interface HomeProps {
+  videos: {
+    id: string;
+    title: string;
+    thumbnailUrl: string;
+  }[];
+}
+
+export default function Home({videos}: HomeProps) {
   const [password, setPassword] = useState('');
   const [accessGranted, setAccessGranted] = useState(false);
   const youtubeVideoId = 'jfKfPfyJRdk';
 
-  const handleInputChange = (event) => {
+  const handleInputChange = event => {
     setPassword(event.target.value);
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = event => {
     event.preventDefault();
     if (password === 'correctPassword') {
       setAccessGranted(true);
@@ -41,8 +53,6 @@ export default async function Home() {
       setAccessGranted(false);
     }
   };
-
-    const videos = await getYouTubeVideos("channelId");
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -55,7 +65,7 @@ export default async function Home() {
         <CardContent>
           <h3 className="text-lg font-semibold mb-2">Band Members</h3>
           <div className="flex items-center gap-4">
-            {bandInfo.members.map((member) => (
+            {bandInfo.members.map(member => (
               <div key={member.id} className="flex flex-col items-center">
                 <Avatar>
                   <AvatarImage src={member.avatarUrl} alt={member.name} />
@@ -68,18 +78,30 @@ export default async function Home() {
           <div className="mt-4">
             <h3 className="text-lg font-semibold mb-2">Connect With Us</h3>
             <div className="flex gap-4">
-              <Button asChild variant="link" >
-                <a href={bandInfo.socialLinks.youtube} target="_blank" rel="noopener noreferrer">
+              <Button asChild variant="link">
+                <a
+                  href={bandInfo.socialLinks.youtube}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   YouTube
                 </a>
               </Button>
               <Button asChild variant="link">
-                <a href={bandInfo.socialLinks.instagram} target="_blank" rel="noopener noreferrer">
+                <a
+                  href={bandInfo.socialLinks.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Instagram
                 </a>
               </Button>
               <Button asChild variant="link">
-                <a href={bandInfo.socialLinks.facebook} target="_blank" rel="noopener noreferrer">
+                <a
+                  href={bandInfo.socialLinks.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Facebook
                 </a>
               </Button>
@@ -100,7 +122,8 @@ export default async function Home() {
         {!accessGranted ? (
           <>
             <p>
-              Join us for our next live performance! Enter the password to access the stream.
+              Join us for our next live performance! Enter the password to
+              access the stream.
             </p>
             <form className="flex gap-2" onSubmit={handleSubmit}>
               <input
@@ -127,4 +150,3 @@ export default async function Home() {
     </div>
   );
 }
-

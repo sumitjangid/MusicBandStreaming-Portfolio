@@ -1,6 +1,8 @@
 import type {Metadata} from 'next';
 import {Geist, Geist_Mono} from 'next/font/google';
 import './globals.css';
+import {getYouTubeVideos} from '@/services/youtube';
+import Home from './page';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -17,15 +19,19 @@ export const metadata: Metadata = {
   description: 'Showcase for your music band',
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const videos = await getYouTubeVideos('channelId');
+
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        {children}
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        <Home videos={videos} />
       </body>
     </html>
   );
