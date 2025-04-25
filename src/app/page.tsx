@@ -46,6 +46,23 @@ const bandInfo = {
   },
 };
 
+const upcomingEvents = [
+  {
+    id: 'event1',
+    date: '2024-08-15',
+    location: 'The Roxy, Los Angeles',
+    thumbnailUrl: 'https://picsum.photos/id/300/300/200',
+    description: 'Get ready for a night of electrifying music at The Roxy!',
+  },
+  {
+    id: 'event2',
+    date: '2024-09-20',
+    location: 'The Fillmore, San Francisco',
+    thumbnailUrl: 'https://picsum.photos/id/301/300/200',
+    description: 'Join us at The Fillmore for an unforgettable performance.',
+  },
+];
+
 interface HomeProps {
   videos: {
     id: string;
@@ -154,6 +171,35 @@ export default function Home({videos}: HomeProps) {
       <section className="mb-8">
         <h2 className="text-2xl font-bold mb-4">Video Gallery</h2>
         <YoutubeGallery videos={videos} />
+      </section>
+
+      {/* Upcoming Events */}
+      <section className="mb-8">
+        <h2 className="text-2xl font-bold mb-4">Upcoming Events</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {upcomingEvents.map(event => (
+            <Card key={event.id}>
+              <img
+                src={event.thumbnailUrl}
+                alt={event.location}
+                className="w-full h-48 object-cover rounded-t-md"
+              />
+              <CardContent>
+                <CardTitle className="text-xl font-semibold">
+                  {new Date(event.date).toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                  })}
+                </CardTitle>
+                <CardDescription>{event.location}</CardDescription>
+                <p className="text-sm text-muted-foreground">
+                  {event.description}
+                </p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
       </section>
 
       {/* Livestream Section */}
