@@ -34,6 +34,18 @@ const bandInfo = {
       avatarUrl: 'https://picsum.photos/id/239/100/100',
       bio: 'Drummer Casey keeps the beat alive with powerful drumming and intricate patterns.',
     },
+    {
+      id: '4',
+      name: 'Morgan S.',
+      avatarUrl: 'https://picsum.photos/id/240/100/100',
+      bio: 'Keyboardist Morgan adds lush textures and soaring melodies to the band sound.',
+    },
+    {
+      id: '5',
+      name: 'Taylor B.',
+      avatarUrl: 'https://picsum.photos/id/241/100/100',
+      bio: 'Saxophonist Taylor brings soulful vibes and improvisational flair to every performance.',
+    },
   ],
   socialLinks: {
     youtube: 'https://youtube.com',
