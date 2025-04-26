@@ -17,7 +17,8 @@ export const LiveStream = () => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    if (password === process.env.NEXT_PUBLIC_LIVESTREAM_PASSWORD) {
+    const liveStreamPassword = process.env.NEXT_PUBLIC_LIVESTREAM_PASSWORD;
+    if (password === liveStreamPassword) {
       setAccessGranted(true);
     } else {
       alert('Incorrect password');

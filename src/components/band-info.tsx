@@ -54,22 +54,10 @@ const bandInfo = {
       bio: 'Trombone extraordinaire Chris blends smooth tones with rhythmic precision.',
     },
     {
-      id: '9',
+      id: '8',
       name: 'Riley T.',
       avatarUrl: 'https://images.pexels.com/photos/775358/pexels-photo-775358.jpeg?auto=compress&cs=tinysrgb&w=400',
       bio: 'Guitarist Riley shreds with electrifying solos and infectious riffs.',
-    },
-    {
-      id: '10',
-      name: 'Drew K.',
-      avatarUrl: 'https://images.pexels.com/photos/3768031/pexels-photo-3768031.jpeg?auto=compress&cs=tinysrgb&w=400',
-      bio: 'Harmonica ace Drew adds bluesy notes and soulful melodies.',
-    },
-    {
-      id: '11',
-      name: 'Sam H.',
-      avatarUrl: 'https://images.pexels.com/photos/775358/pexels-photo-775358.jpeg?auto=compress&cs=tinysrgb&w=400',
-      bio: 'Percussionist Sam brings exotic rhythms and dynamic energy to the stage.',
     },
   ],
   socialLinks: {
