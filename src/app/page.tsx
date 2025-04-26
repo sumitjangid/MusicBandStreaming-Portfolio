@@ -66,21 +66,15 @@ const bandInfo = {
     },
     {
       id: '9',
-      name: 'River L.',
-      avatarUrl: 'https://images.pexels.com/photos/3825566/pexels-photo-3825566.jpeg?auto=compress&cs=tinysrgb&w=400',
-      bio: 'Acoustic guitarist River enchants with soulful melodies and intricate fingerstyle.',
+      name: 'Riley T.',
+      avatarUrl: 'https://images.pexels.com/photos/775358/pexels-photo-775358.jpeg?auto=compress&cs=tinysrgb&w=400',
+      bio: 'Guitarist Riley shreds with electrifying solos and infectious riffs.',
     },
     {
       id: '10',
-      name: 'Skyler W.',
-      avatarUrl: 'https://images.pexels.com/photos/3767983/pexels-photo-3767983.jpeg?auto=compress&cs=tinysrgb&w=400',
-      bio: 'Backup Vocalist Skyler enhances harmonies with smooth blending.',
-    },
-    {
-      id: '11',
-      name: 'Jesse M.',
-      avatarUrl: 'https://images.pexels.com/photos/2528118/pexels-photo-2528118.jpeg?auto=compress&cs=tinysrgb&w=400',
-      bio: 'Multi-instrumentalist Jesse adds unique textures with violin and mandolin.',
+      name: 'Sam K.',
+      avatarUrl: 'https://images.pexels.com/photos/936099/pexels-photo-936099.jpeg?auto=compress&cs=tinysrgb&w=400',
+      bio: 'DJ Sam spins the latest beats and remixes to keep the party going.',
     },
   ],
   socialLinks: {
@@ -143,9 +137,9 @@ export default function Home({videos}: HomeProps) {
   const [password, setPassword] = useState('');
   const [accessGranted, setAccessGranted] = useState(false);
   const [streamType, setStreamType] = useState<'youtube' | 'zoom'>('youtube'); // Default to YouTube
-  const youtubeVideoId = '45JVP4V9Eak';
-  const zoomMeetingId = '7109942516'; // Replace with your Zoom Meeting ID
-  const zoomPassword = 'zoomPassword'; // Replace with your Zoom Meeting Password (if any)
+  const youtubeVideoId = process.env.YOUTUBE_VIDEO_ID || 'dQw4w9WgXcQ';
+  const zoomMeetingId = process.env.ZOOM_MEETING_ID || '1234567890'; // Replace with your Zoom Meeting ID
+  const zoomPassword = process.env.ZOOM_PASSWORD || 'zoomPassword'; // Replace with your Zoom Meeting Password (if any)
 
   const handleInputChange = event => {
     setPassword(event.target.value);
@@ -153,7 +147,7 @@ export default function Home({videos}: HomeProps) {
 
   const handleSubmit = event => {
     event.preventDefault();
-    if (password === 'correctPassword') {
+    if (password === process.env.LIVESTREAM_PASSWORD) {
       setAccessGranted(true);
     } else {
       alert('Incorrect password');
