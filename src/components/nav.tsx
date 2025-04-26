@@ -24,7 +24,7 @@ const Nav = () => {
       <div className="container flex items-center justify-between h-16">
         <div className="flex items-center">
           <a href="/" className="text-2xl font-bold">
-            BandStream
+            Music-Band-Stream
           </a>
         </div>
         <nav className="hidden md:flex items-center justify-end flex-grow space-x-6">
