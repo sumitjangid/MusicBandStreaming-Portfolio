@@ -4,6 +4,7 @@ import './globals.css';
 import {getYouTubeVideos} from '@/services/youtube';
 import Home from './page';
 import Nav from '@/components/nav';
+import Footer from '@/components/footer';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -34,6 +35,7 @@ export default async function RootLayout({
       >
         <Nav />
         <Home videos={videos} />
+        <Footer />
       </body>
     </html>
   );
